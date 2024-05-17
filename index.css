@@ -11,6 +11,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Mulish' , sans-serif;
 }
 
 #add-task-container {
@@ -98,4 +99,22 @@ input {
 
 .check {
     text-decoration: line-through orange;
+}
+
+i {
+    font-size: 2rem;
+}
+
+#task-container {
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+}
+
+#clear-all {
+    padding: 10px;
+    font-size: xx-large;
+    margin: 1rem;
+    border-radius: 10px;
+    background-color: azure;
 }
