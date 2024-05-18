@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TO-DO-LIST</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+        </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
@@ -22,8 +25,21 @@
     
     </div>
 
-    <div id="task-container"></div>
-    <button id="clear-all" onclick="clearLocal()">.clear()</button>
+    <div id="task-container">
+        <div id="proto-type-el"class="task">
+            <li><span style="font-size: 2rem;">😊
+            </span>Write your first task</li>
+            
+            <button onclick="checkFunction()" class="checkTask">
+                <i class="fa-solid fa-hammer" aria-hidden="true"></i>
+            </button>
+            
+            <button onclick="deleteFunction()" class="deleteTask">
+                <i class="fa-solid fa-trash-can" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+    <button id="clear-all" onclick="clearLocal()">localStorage.clear()</button>
 
 </body>
 <script src="index.js"></script>

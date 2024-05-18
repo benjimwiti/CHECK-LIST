@@ -6,6 +6,35 @@ const inputTask = document.getElementById('input-task')
 let storedTasks = localStorage.getItem('storedTasks')
 let taskList = storedTasks ?  JSON.parse(storedTasks) : []
 
+//PROTO-TYPE FUNCTIONALITY
+let protoTypeEl = document.getElementById('proto-type-el')
+const protoTypeElements=protoTypeEl.children
+console.log(check2Function)  //check your console
+console.log(delete2Function) //check your console
+check2Function(protoTypeElements[1])
+
+delete2Function(protoTypeElements[2])
+
+
+//RE-USABLE BUTTON-FUNCTIONALITY
+function check2Function(button) {  
+    return button.addEventListener('click' , function() {
+        console.log('click')
+        button.parentElement.classList.toggle('check')
+    })
+}
+
+function delete2Function(button) {
+    return button.addEventListener('click', function(e) {
+        console.log(e.target.childElementCount)
+        if(e.target.childElementCount == 0 ) {
+        e.target.parentElement.parentElement.remove()
+   } else {e.target.parentElement.remove()}
+    })
+}
+
+
+    
 
 
 
@@ -27,16 +56,26 @@ if (taskList) {
         deleteButton.innerHTML = `<i class="fa-solid fa-trash-can"></i>`
         deleteButton.classList.add('deleteTask')
         
-        checkButton.addEventListener('click' , function() {
-            console.log('click')
-            checkButton.parentElement.classList.toggle('check')
-        })
-        deleteButton.addEventListener('click', function(e) {
-            console.log(e.target.childElementCount)
-            if(e.target.childElementCount == 0 ) {
-            e.target.parentElement.parentElement.remove()
-       } else {e.target.parentElement.remove()}
-        })
+    //     function checkFunction() {
+    //      checkButton.addEventListener('click' , function() {
+    //          console.log('click')
+    //          checkButton.parentElement.classList.toggle('check')
+    //      })
+    //  }
+    //  checkFunction()
+    check2Function(checkButton)
+        // function deleteFunction() {
+        //  deleteButton.addEventListener('click', function(e) {
+        //      console.log(e.target.childElementCount)
+        //      if(e.target.childElementCount == 0 ) {
+        //      e.target.parentElement.parentElement.remove()
+        // } else {e.target.parentElement.remove()}
+        //  })
+        //  }
+        // deleteFunction()
+        delete2Function(deleteButton)
+        
+      
         
         
         task.appendChild(li)

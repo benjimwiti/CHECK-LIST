@@ -15,12 +15,15 @@ body {
     background: url(./to-do-list.jpg) no-repeat bottom center;
     background-size: cover;
 }
+button {
+    font-family: "Dancing Script" , cursive;
+}
 
 input {
     flex: 5;
     margin-right: 10px;
     border-radius: 10px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 5px;
     font-style: italic;
     font-weight: 200;
@@ -120,5 +123,7 @@ i {
     font-size: xx-large;
     margin: 1rem;
     border-radius: 10px;
-    background-color: azure;
+    background-color: white;
+    border: 1px solid black;
 }
+
