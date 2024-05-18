@@ -7,22 +7,7 @@ let storedTasks = localStorage.getItem('storedTasks')
 let taskList = storedTasks ?  JSON.parse(storedTasks) : []
 
 
-let checkButton = document.createElement('button')
-checkButton.innerHTML = `<i class="fa-solid fa-hammer"></i>`
-checkButton.classList.add('checkTask')
 
-let deleteButton = document.createElement('button')
-deleteButton.innerHTML = `<i class="fa-solid fa-trash-can"></i>`
-deleteButton.classList.add('deleteTask')
-
-//EVENTS
-checkButton.addEventListener('click' , function() {
-    console.log('click')
-    checkButton.parentElement.classList.toggle('check')
-})
-deleteButton.addEventListener('click', function(e) {
-    e.target.parentElement.parentElement.remove()
-})
 
 
 if (taskList) {
@@ -68,14 +53,36 @@ if (taskList) {
 
 //events
 addTask.addEventListener ('click' , function() {
+    console.log('adding-task')
     console.log(inputTask.value)
+    
     let task = document.createElement('div')
     task.classList.add('task')
     
     let li = document.createElement('li')
     li.innerHTML = `${inputTask.value}`
-    
+
+    let checkButton = document.createElement('button')
+    checkButton.innerHTML = `<i class="fa-solid fa-hammer"></i>`
+    checkButton.classList.add('checkTask')
+
+    let deleteButton = document.createElement('button')
+    deleteButton.innerHTML = `<i class="fa-solid fa-trash-can"></i>`
+    deleteButton.classList.add('deleteTask')
+
     task.append(li, checkButton, deleteButton)
+    //EVENTS
+    checkButton.addEventListener('click' , function() {
+        console.log('click')
+        checkButton.parentElement.classList.toggle('check')
+    })
+    deleteButton.addEventListener('click', function(e) {
+        console.log(e.target.childElementCount)
+        if(e.target.childElementCount == 0 ) {
+        e.target.parentElement.parentElement.remove()
+    } else {e.target.parentElement.remove()}
+    })
+    
     
     if (inputTask.value === '') {
         alert('Please Enter a Task')
