@@ -14,15 +14,6 @@ body {
     font-family: 'Mulish' , sans-serif;
 }
 
-#add-task-container {
-    width: 550px;
-    padding: 20px 10px;
-    background-color: #fff;
-    border-radius: 20px ;
-    box-shadow: 0 0 3px;
-    display: flex;
-}
-
 input {
     flex: 5;
     margin-right: 10px;
@@ -75,7 +66,7 @@ input {
     cursor: pointer;
 }
 
-.task .checkTask {
+.checkTask {
     color: orange;
     margin-right: 5px;
     border: 1px solid orange;
@@ -86,7 +77,7 @@ input {
     }
 }
 
-.task .deleteTask {
+.deleteTask {
     color: red;
     border: solid 2px red;
     font-size: 1.3rem;
@@ -109,6 +100,15 @@ i {
     width: 60%;
     height: auto;
     margin: 0 auto;
+}
+
+#add-task-container {
+    width: 550px;
+    padding: 20px 10px;
+    background-color: #fff;
+    border-radius: 20px ;
+    box-shadow: 0 0 3px;
+    display: flex;
 }
 
 #clear-all {
