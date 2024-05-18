@@ -17,15 +17,15 @@ delete2Function(protoTypeElements[2])
 
 
 //RE-USABLE BUTTON-FUNCTIONALITY
-function check2Function(button) {  
-    return button.addEventListener('click' , function() {
+function check2Function(specificButton) {  
+    return specificButton.addEventListener('click' , function() {
         console.log('click')
-        button.parentElement.classList.toggle('check')
+        specificButton.parentElement.classList.toggle('check')
     })
 }
 
-function delete2Function(button) {
-    return button.addEventListener('click', function(e) {
+function delete2Function(specificButton) {
+    return specificButton.addEventListener('click', function(e) {
         console.log(e.target.childElementCount)
         if(e.target.childElementCount == 0 ) {
         e.target.parentElement.parentElement.remove()
@@ -75,8 +75,8 @@ if (taskList) {
         // let deleteButton = document.createElement('button')
         // deleteButton.innerHTML = `<i class="fa-solid fa-trash-can"></i>`
         // deleteButton.classList.add('deleteTask')
-        spreadTaskBlock = createTask(x)
-        console.log(spreadTaskBlock)
+        spreadTaskBlockLocal = createTask(x)
+        console.log(spreadTaskBlockLocal)
         
     //     function checkFunction() {
     //      checkButton.addEventListener('click' , function() {
@@ -85,7 +85,7 @@ if (taskList) {
     //      })
     //  }
     //  checkFunction()
-    check2Function(spreadTaskBlock[2])
+    check2Function(spreadTaskBlockLocal[2])
         // function deleteFunction() {
         //  deleteButton.addEventListener('click', function(e) {
         //      console.log(e.target.childElementCount)
@@ -95,13 +95,13 @@ if (taskList) {
         //  })
         //  }
         // deleteFunction()
-        delete2Function(spreadTaskBlock[3])
+        delete2Function(spreadTaskBlockLocal[3])
         
       
         
         
-        spreadTaskBlock[0].append(spreadTaskBlock[1], spreadTaskBlock[2], spreadTaskBlock[3])
-        taskContainer.append(spreadTaskBlock[0])
+        spreadTaskBlockLocal[0].append(spreadTaskBlockLocal[1], spreadTaskBlockLocal[2], spreadTaskBlockLocal[3])
+        taskContainer.append(spreadTaskBlockLocal[0])
         
        // console.log(task.children) 
         console.log(storedTask)
@@ -114,7 +114,7 @@ if (taskList) {
 addTask.addEventListener ('click' , function() {
     console.log('adding-task')
     console.log(inputTask.value)
-    x = inputTask.value
+
     
     // let task = document.createElement('div')
     // task.classList.add('task')
