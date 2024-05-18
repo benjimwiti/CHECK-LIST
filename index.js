@@ -33,19 +33,12 @@ function delete2Function(button) {
     })
 }
 
-
-    
-
-
-
-
-if (taskList) {
-    for(const storedTask of taskList) {
+function createTask (x) { 
         let task = document.createElement('div')
         task.classList.add('task')
         
         let li = document.createElement('li')
-        li.innerHTML = storedTask
+        li.innerHTML = x
         
         let checkButton = document.createElement('button')
         checkButton.innerHTML = `<i class="fa-solid fa-hammer"></i>`
@@ -55,6 +48,35 @@ if (taskList) {
         let deleteButton = document.createElement('button')
         deleteButton.innerHTML = `<i class="fa-solid fa-trash-can"></i>`
         deleteButton.classList.add('deleteTask')
+
+        taskBlock = [task,li, checkButton, deleteButton]
+        return taskBlock
+}
+
+    
+
+
+[1,2,3]
+
+if (taskList) {
+    for(const storedTask of taskList) {
+        x = storedTask
+        // let task = document.createElement('div')
+        // task.classList.add('task')
+        
+        // let li = document.createElement('li')
+        // li.innerHTML = storedTask
+        
+        // let checkButton = document.createElement('button')
+        // checkButton.innerHTML = `<i class="fa-solid fa-hammer"></i>`
+        // checkButton.classList.add('checkTask')
+        
+        
+        // let deleteButton = document.createElement('button')
+        // deleteButton.innerHTML = `<i class="fa-solid fa-trash-can"></i>`
+        // deleteButton.classList.add('deleteTask')
+        spreadTaskBlock = createTask(x)
+        console.log(spreadTaskBlock)
         
     //     function checkFunction() {
     //      checkButton.addEventListener('click' , function() {
@@ -63,7 +85,7 @@ if (taskList) {
     //      })
     //  }
     //  checkFunction()
-    check2Function(checkButton)
+    check2Function(spreadTaskBlock[2])
         // function deleteFunction() {
         //  deleteButton.addEventListener('click', function(e) {
         //      console.log(e.target.childElementCount)
@@ -73,17 +95,15 @@ if (taskList) {
         //  })
         //  }
         // deleteFunction()
-        delete2Function(deleteButton)
+        delete2Function(spreadTaskBlock[3])
         
       
         
         
-        task.appendChild(li)
-        task.appendChild(checkButton)
-        task.appendChild(deleteButton)
-        taskContainer.append(task)
+        spreadTaskBlock[0].append(spreadTaskBlock[1], spreadTaskBlock[2], spreadTaskBlock[3])
+        taskContainer.append(spreadTaskBlock[0])
         
-        console.log(task.children) 
+       // console.log(task.children) 
         console.log(storedTask)
         
         
