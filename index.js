@@ -53,7 +53,7 @@ function createTask (x) {
         return taskBlock
 }
 
-    
+
 
 
 [1,2,3]
@@ -114,39 +114,44 @@ if (taskList) {
 addTask.addEventListener ('click' , function() {
     console.log('adding-task')
     console.log(inputTask.value)
+    x = inputTask.value
     
-    let task = document.createElement('div')
-    task.classList.add('task')
+    // let task = document.createElement('div')
+    // task.classList.add('task')
     
-    let li = document.createElement('li')
-    li.innerHTML = `${inputTask.value}`
+    // let li = document.createElement('li')
+    // li.innerHTML = `${inputTask.value}`
 
-    let checkButton = document.createElement('button')
-    checkButton.innerHTML = `<i class="fa-solid fa-hammer"></i>`
-    checkButton.classList.add('checkTask')
+    // let checkButton = document.createElement('button')
+    // checkButton.innerHTML = `<i class="fa-solid fa-hammer"></i>`
+    // checkButton.classList.add('checkTask')
 
-    let deleteButton = document.createElement('button')
-    deleteButton.innerHTML = `<i class="fa-solid fa-trash-can"></i>`
-    deleteButton.classList.add('deleteTask')
+    // let deleteButton = document.createElement('button')
+    // deleteButton.innerHTML = `<i class="fa-solid fa-trash-can"></i>`
+    // deleteButton.classList.add('deleteTask')
+    liveSpreadBox = createTask(inputTask.value)
 
-    task.append(li, checkButton, deleteButton)
+    liveSpreadBox[0].append(liveSpreadBox[1]/* li = input.value */, liveSpreadBox[2]/* checkButton */,liveSpreadBox[3] /* deleteButton */)
     //EVENTS
-    checkButton.addEventListener('click' , function() {
-        console.log('click')
-        checkButton.parentElement.classList.toggle('check')
-    })
-    deleteButton.addEventListener('click', function(e) {
-        console.log(e.target.childElementCount)
-        if(e.target.childElementCount == 0 ) {
-        e.target.parentElement.parentElement.remove()
-    } else {e.target.parentElement.remove()}
-    })
+    // checkButton.addEventListener('click' , function() {
+    //     console.log('click')
+    //     checkButton.parentElement.classList.toggle('check')
+    // })
+    check2Function(liveSpreadBox[2])
+    // deleteButton.addEventListener('click', function(e) {
+    //     console.log(e.target.childElementCount)
+    //     if(e.target.childElementCount == 0 ) {
+    //     e.target.parentElement.parentElement.remove()
+    // } else {e.target.parentElement.remove()}
+    // })
+    delete2Function(liveSpreadBox[3])
     
     
     if (inputTask.value === '') {
         alert('Please Enter a Task')
     } else {
-        taskContainer.appendChild(task)
+        //taskContainer.appendChild(task)
+        taskContainer.append(liveSpreadBox[0])
         taskList.push(inputTask.value)
         localStorage.setItem('storedTasks', JSON.stringify(taskList))
         inputTask.value = ""
