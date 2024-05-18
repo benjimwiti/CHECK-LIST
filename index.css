@@ -12,6 +12,8 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Mulish' , sans-serif;
+    background: url(./to-do-list.jpg) no-repeat bottom center;
+    background-size: cover;
 }
 
 input {
@@ -20,6 +22,8 @@ input {
     border-radius: 10px;
     font-size: 2rem;
     padding: 5px;
+    font-style: italic;
+    font-weight: 200;
 } 
 
 #add-task {
