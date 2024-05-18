@@ -47,10 +47,10 @@ if (taskList) {
             checkButton.parentElement.classList.toggle('check')
         })
         deleteButton.addEventListener('click', function(e) {
-//            console.log(e.target.childElementCount)
-//            if(e.target.childElementCount == 0 ) {
+            console.log(e.target.childElementCount)
+            if(e.target.childElementCount == 0 ) {
             e.target.parentElement.parentElement.remove()
- //       } else {e.target.parentElement.remove()}
+       } else {e.target.parentElement.remove()}
         })
         
         
