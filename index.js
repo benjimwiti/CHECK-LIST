@@ -56,8 +56,8 @@ function createTask (x) {
 
 
 
-[1,2,3]
-
+localStoragefunction()
+function localStoragefunction() {
 if (taskList) {
     for(const storedTask of taskList) {
         x = storedTask
@@ -109,6 +109,8 @@ if (taskList) {
         
     }
 }
+}
+
 
 //events
 addTask.addEventListener ('click' , function() {
@@ -161,6 +163,8 @@ addTask.addEventListener ('click' , function() {
 
 function clearLocal() {
     localStorage.clear()
+    taskList = [] //instant removal ...in progress
+    location.reload()
 }
 
 
